@@ -18,9 +18,9 @@ public class CategoryController {
     private ProductService productService;
 
     @GetMapping
-    public ModelAndView listProvinces(){
+    public ModelAndView listCagetory(){
         Iterable<Category> categories = categoryService.findAll();
-        ModelAndView modelAndView = new ModelAndView("cagetory/list");
+        ModelAndView modelAndView = new ModelAndView("category/list");
         modelAndView.addObject("categories",categories);
         return modelAndView;
     }
@@ -49,7 +49,7 @@ public class CategoryController {
             modelAndView.addObject("category", category);
             return modelAndView;
         }else {
-            ModelAndView modelAndView = new ModelAndView("/error.404");
+            ModelAndView modelAndView = new ModelAndView("/error");
             return modelAndView;
         }
     }
@@ -71,7 +71,7 @@ public class CategoryController {
             modelAndView.addObject("category", category);
             return modelAndView;
         }else {
-            ModelAndView modelAndView = new ModelAndView("/error.404");
+            ModelAndView modelAndView = new ModelAndView("/error");
             return modelAndView;
         }
     }

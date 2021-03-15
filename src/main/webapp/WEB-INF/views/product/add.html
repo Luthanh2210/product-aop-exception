@@ -6,12 +6,12 @@
 </head>
 <body>
 <p>
-    <a href="/products">Product list</a>
+    <a href="/product">Product list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/products/add}" method="post" th:object="${product}">
+<form th:action="@{/product/add}" method="post" th:object="${product}">
     <table>
         <tr>
             <td>Name:</td>
@@ -33,7 +33,7 @@
             <td>Category:</td>
             <td>
                 <select th:field="*{category}" th:name="category">
-                    <option th:each="p : ${categories}" th:value="${p.id}" th:text="${p.name}"></option>
+                    <option th:each="p : ${categorylist}" th:value="${p.id}" th:text="${p.name}"></option>
                 </select>
             </td>
         </tr>

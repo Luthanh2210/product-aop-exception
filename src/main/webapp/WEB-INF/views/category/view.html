@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>View category: <span th:text="${category.name}"></span></h1>
-<a href="/categories">Province list</a>
+<a href="/category">Category list</a>
 <table border="1">
     <tr>
         <th>Name</th>
@@ -17,7 +17,7 @@
         <tr>
             <td th:text="${product.name}"></td>
             <td th:text="${product.description}"></td>
-            <td th:text="${product.category_id}"></td>
+            <td th:text="${product.category}"></td>
         </tr>
     </th:block>
 </table>

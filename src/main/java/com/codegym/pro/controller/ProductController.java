@@ -1,5 +1,6 @@
 package com.codegym.pro.controller;
 
+import com.codegym.pro.exception.NotFoundException;
 import com.codegym.pro.model.Product;
 import com.codegym.pro.model.Category;
 import com.codegym.pro.service.ProductService;
@@ -24,15 +25,20 @@ public class ProductController {
     @Autowired
     CategoryService categoryService;
 
-    @ModelAttribute("category")
+    @ModelAttribute("categorylist")
     public Iterable<Category> categories(){
         return categoryService.findAll();
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView showInputNotAcceptable() {
+        return new ModelAndView("error");
     }
 
     //region INSERT
     @GetMapping("/add")
     public ModelAndView showInsertForm() {
-        ModelAndView modelAndView = new ModelAndView("/add");
+        ModelAndView modelAndView = new ModelAndView("product/add");
         modelAndView.addObject("product", new Product());
         return modelAndView;
     }
@@ -138,6 +144,5 @@ public class ProductController {
             return modelAndView;
         }
     }
-
 
 }

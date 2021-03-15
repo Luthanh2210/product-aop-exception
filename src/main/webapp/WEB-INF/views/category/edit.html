@@ -7,16 +7,16 @@
 <body>
 <h1>Edit category</h1>
 <p>
-    <a href="/categories">Province list</a>
+    <a href="/category">Category list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/categories/edit}" th:object="${category}" method="post">
+<form th:action="@{/category/edit}" th:object="${category}" method="post">
     <input th:type="hidden" name="id" th:value="*{id}">
     <table>
         <tr>
-            <td>Province name:</td>
+            <td>Category name:</td>
             <td><input type="text" name="name" th:field="*{name}" th:value="${category.name}"></td>
         </tr>
         <tr>

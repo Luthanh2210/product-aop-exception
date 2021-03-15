@@ -7,7 +7,7 @@
 <body>
 <h1>Edit product</h1>
 <p>
-    <a href="/products">Customer list</a>
+    <a href="/product">Product list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
@@ -35,7 +35,7 @@
             <td>Category:</td>
             <td>
                 <select name="category">
-                    <option th:each="p : ${categories}"
+                    <option th:each="p : ${categorylist}"
                             th:value="${p.id}"
                             th:text="${p.name}"
                             th:selected="(${p.id} == *{category.id})"></option>
@@ -48,5 +48,6 @@
         </tr>
     </table>
 </form>
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

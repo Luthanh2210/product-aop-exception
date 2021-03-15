@@ -5,8 +5,8 @@
     <title>Provinces</title>
 </head>
 <body>
-<a href="/categories/add">Create new category</a>
-<table id="provinces" border="1">
+<a href="/category/add">Create new category</a>
+<table id="category" border="1">
     <thead>
     <tr>
         <th>Name</th>
@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="category : ${provinces}">
+    <tr th:each="category : ${categories}">
         <td th:text="${category.name}"></td>
         <td><a th:href="@{/categories/edit/__${category.id}__ }">Edit</a></td>
         <td><a th:href="@{/categories/delete/__${category.id}__ }">Delete</a></td>
