@@ -107,7 +107,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource());
-        emf.setPackagesToScan("com.codegym.cms.model");
+        emf.setPackagesToScan("com.codegym.pro.model");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         emf.setJpaVendorAdapter(vendorAdapter);
         emf.setJpaProperties(additionalProperties());
@@ -124,12 +124,12 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
     //region DEPENDENCIES
     @Bean
-    public ProductService customerService() {
+    public ProductService productService() {
         return new ProductServiceImpl();
     }
 
     @Bean
-    public CategoryService provinceService(){return new CategoryServiceImpl();
+    public CategoryService categoryService(){return new CategoryServiceImpl();
     }
 
     @Override

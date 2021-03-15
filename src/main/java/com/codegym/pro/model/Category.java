@@ -48,11 +48,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<Product> getCustomers() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setCustomers(List<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 }

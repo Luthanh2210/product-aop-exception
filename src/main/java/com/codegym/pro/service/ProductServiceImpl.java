@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findTop5ByDate() {
-        return productRepository.findTop5ByOrderByDateDesc();
+        return productRepository.findTop5ByOrderByDateTimeDesc();
     }
 
     @Override

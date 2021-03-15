@@ -31,8 +31,8 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
     compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.12.RELEASE'
 
-    compile group: 'javax.validation' , name: 'validation-api' , version: '2.0.1.Final'
-    compile group: 'org.hibernate' , name: 'hibernate-validator', version: '6.0.10.Final'
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
 
     compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.5'
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'

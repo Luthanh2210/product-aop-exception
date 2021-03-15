@@ -3,10 +3,7 @@ package com.codegym.pro.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+
 import java.util.Date;
 
 @Entity
@@ -15,26 +12,24 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotEmpty
-    @Size(min=2, max=30)
+
     private String name;
-    @NotNull
+
     private Long price;
     private String description;
     @DateTimeFormat(pattern="MM/dd/yyyy")
-    @NotNull
-    @Past
+
     private Date dateTime;
-    @NotNull
+
     private Long quantity;
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Long category;
+    private Category category;
 
     public Product(){
 
     }
-    public Product(@NotEmpty @Size(min = 2, max = 30) String name, @NotNull Long price, String description, @NotNull @Past Date dateTime, @NotNull Long quantity, Long category) {
+    public Product(String name, Long price, String description,  Date dateTime, Long quantity, Category category) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -92,11 +87,19 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Long getCategory_id() {
+    public Category getCategory_id() {
         return category;
     }
 
     public void setCategory_id(Long category_id) {
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
         this.category = category;
     }
 
