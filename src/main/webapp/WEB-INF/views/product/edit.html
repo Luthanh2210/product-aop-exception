@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Edit product</title>
+</head>
+<body>
+<h1>Edit product</h1>
+<p>
+    <a href="/products">Customer list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/products/edit}" th:object="${product}" method="post">
+    <input th:type="hidden" name="id" th:value="*{id}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" th:field="*{name}" th:value="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" name="price" th:field="*{price}" th:value="${product.price}"/></td>
+        </tr>
+        <tr>
+            <td>DateTime:</td>
+            <td><input type="datetime-local" name="datetime" th:field="*{dateTime}" th:value="${product.dateTime}"/></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input type="text" name="quantity" th:field="*{quantity}" th:value="${product.quantity}"></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td>
+                <select name="category">
+                    <option th:each="p : ${categories}"
+                            th:value="${p.id}"
+                            th:text="${p.name}"
+                            th:selected="(${p.id} == *{category.id})"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update product"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <a href="/products">Product list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/products/add}" method="post" th:object="${product}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" name="price" th:field="*{price}"></td>
+        </tr>
+        <tr>
+            <td>Description :</td>
+            <td><input type="text" name="description " th:field="*{description}"></td>
+        </tr>
+        <tr>
+            <td>DateTime :</td>
+            <td><input type="datetime-local" name="datetime " th:field="*{dateTime}"></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td>
+                <select th:field="*{category}" th:name="category">
+                    <option th:each="p : ${categories}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Insert</button>
+</form>
+<footer ></footer>
+</body>
+</html>

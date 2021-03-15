@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Provinces</title>
+</head>
+<body>
+<a href="/categories/add">Create new category</a>
+<table id="provinces" border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${provinces}">
+        <td th:text="${category.name}"></td>
+        <td><a th:href="@{/categories/edit/__${category.id}__ }">Edit</a></td>
+        <td><a th:href="@{/categories/delete/__${category.id}__ }">Delete</a></td>
+        <td><a th:href="@{/categories/view/__${category.id}__ }">View</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
