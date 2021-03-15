@@ -5,37 +5,38 @@
     <title>ProductList</title>
 </head>
 <body>
-<a href="/product/add">Create new product</a>
+<a href="/products/add">Create new product</a>
 <br>
 <br>
 <form>
     Search by Category:
-    <form th:action="@{'/students/search'}" th:method="post">
+    <form th:action="@{'/cagetory/search'}" th:method="post">
 
         <select th:name="category" th:id="category">
-            <th:block th:each="cagetory1:${categorylist}">
-                <option th:value="${cagetory1.id}" th:text="${cagetory1.name}"></option>
+            <th:block th:each="category1:${categorylist}">
+                <option th:value="${category1.id}" th:text="${category1.name}"></option>
             </th:block>
         </select>
         <input type="submit" value="search">
 
     </form><br/>
-    <form action="/product/search" method="post">
+    <form action="/products/search" method="post">
         <input type="text" name="name" placeholder="Input name search">
         <input type="submit" value="Search Product">
     </form>
 
-    <form action="/product/top5">
+    <form action="/products/top5">
         <input type="submit" value="Find Top 5 Product By Price">
     </form>
-    <form action="/product/top5bydate">
+    <form action="/products/top5bydate">
         <input type="submit" value="Find Top 5 Product By Date">
     </form>
     <div>
-        <form action="/product/sum">
-            <input type="submit" value="Sum Price">
+        <form action="/products/sum">
+            <input type="button" value="Sum Price">
+            <h3 th:text="${sum}"></h3>
         </form>
-        <h3 th:text="${sum}"></h3>
+
     </div>
     <table id="products" border="1">
         <thead>

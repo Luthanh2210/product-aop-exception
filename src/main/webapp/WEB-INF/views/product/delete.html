@@ -8,7 +8,7 @@
 <h1>Delete product</h1>
 <h2>Are you sure?</h2>
 <p>
-    <a href="/product">Customer list</a>
+    <a href="/products">Product list</a>
 </p>
 <form th:action="@{/products/delete}" th:object="${product}" method="post">
     <input th:type="hidden" name="id" th:value="*{id}">

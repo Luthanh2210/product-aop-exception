@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class ProductController {
     @Autowired
     ProductService productService;
@@ -105,7 +105,7 @@ public class ProductController {
     }
 
     @PostMapping("/edit")
-    public ModelAndView updateProduct(@ModelAttribute("customer") Product product){
+    public ModelAndView updateProduct(@ModelAttribute("product") Product product){
         productService.save(product);
         ModelAndView modelAndView = new ModelAndView("product/edit");
         modelAndView.addObject("product", new Product());

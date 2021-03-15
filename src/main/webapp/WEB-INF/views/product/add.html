@@ -6,12 +6,12 @@
 </head>
 <body>
 <p>
-    <a href="/product">Product list</a>
+    <a href="/products">Product list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/product/add}" method="post" th:object="${product}">
+<form th:action="@{/products/add}" method="post" th:object="${product}">
     <table>
         <tr>
             <td>Name:</td>
@@ -23,11 +23,15 @@
         </tr>
         <tr>
             <td>Description :</td>
-            <td><input type="text" name="description " th:field="*{description}"></td>
+            <td><input type="text" name="description" th:field="*{description}"></td>
         </tr>
         <tr>
             <td>DateTime :</td>
-            <td><input type="datetime-local" name="datetime " th:field="*{dateTime}"></td>
+            <td><input type="date" name="dateTime" th:field="*{dateTime}"></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input type="text" name="quantity" th:field="*{quantity}"></td>
         </tr>
         <tr>
             <td>Category:</td>

@@ -79,14 +79,14 @@ public class CategoryController {
     @PostMapping("/delete")
     public String deleteProvince(@ModelAttribute("category") Category category){
         categoryService.remove(category.getId());
-        return "redirect:/categories";
+        return "redirect:/category";
     }
 
     @GetMapping("view/{id}")
     public ModelAndView viewProvince(@PathVariable("id") Long id){
         Category category = categoryService.findById(id);
         if (category == null){
-            return new ModelAndView("/error.404");
+            return new ModelAndView("/error");
         }
         Iterable<Product> products = productService.findAllByCategory(category);
 

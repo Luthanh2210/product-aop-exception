@@ -4,7 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "product")
@@ -17,11 +17,12 @@ public class Product {
 
     private Long price;
     private String description;
-    @DateTimeFormat(pattern="MM/dd/yyyy")
+    private Long quantity;
+
 
     private Date dateTime;
 
-    private Long quantity;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
