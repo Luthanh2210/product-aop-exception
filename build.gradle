@@ -24,6 +24,7 @@ dependencies {
 
     compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
     compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.0.Final'
@@ -31,8 +32,8 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
     compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.12.RELEASE'
 
-    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
-    compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
+//    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+//    compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
 
     compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.5'
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
